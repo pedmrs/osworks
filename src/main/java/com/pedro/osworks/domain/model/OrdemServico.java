@@ -28,27 +28,19 @@ public class OrdemServico {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Valid
-	@ConvertGroup(from = Default.class, to = ValidationGroups.ClienteId.class)
 	@ManyToOne
-	@NotNull
 	private Cliente cliente;
 	
-	@NotBlank
 	private String descricao;
 	
-	@NotNull
 	private BigDecimal preco;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "status")
-	@JsonProperty(access = Access.READ_ONLY)
 	private StatusOrdemServico statusOrdemServico;
 	
-	@JsonProperty(access = Access.READ_ONLY)
 	private OffsetDateTime dataAbertura;
 	
-	@JsonProperty(access = Access.READ_ONLY)
 	private OffsetDateTime dataFinalizacao;
 	
 	public Long getId() {
