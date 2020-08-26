@@ -51,7 +51,7 @@ public class OrdemServicoController {
 		Optional<OrdemServico> ordemServico = ordemServicoRepository.findById(ordemServicoId);
 		
 		if(ordemServico.isPresent()) {
-			OrdemServicoRepresentationModel model = modelMapper.map(ordemServico, OrdemServicoRepresentationModel.class);
+			OrdemServicoRepresentationModel model = modelMapper.map(ordemServico.get(), OrdemServicoRepresentationModel.class);
 			return ResponseEntity.ok(model);
 		}
 		
