@@ -1,23 +1,17 @@
 package com.pedro.osworks.domain.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import com.pedro.osworks.domain.ValidationGroups;
 
 @Entity
 public class Cliente {
 
 	@Id
-	@NotNull(groups = ValidationGroups.ClienteId.class)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
